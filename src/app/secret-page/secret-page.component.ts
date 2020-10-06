@@ -16,6 +16,7 @@ export class SecretPageComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params
       .subscribe(param => {
+        console.log(param);
         this.num = param['id'];
       })
   }

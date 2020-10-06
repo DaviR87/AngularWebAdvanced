@@ -14,6 +14,7 @@ import { ReactiveFormComponent } from './form-examples/reactive-form/reactive-fo
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SharedModule } from './shared/shared.module';
+import { RoutingPageComponent } from './routing-page/routing-page.component';
 
 const MAT_MODULES = [
   MatButtonModule,
@@ -29,7 +30,8 @@ const MAT_MODULES = [
     SecretPageComponent,
     FormExamplesComponent,
     TemplateDrivenFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    RoutingPageComponent
   ],
   imports: [
     ...MAT_MODULES,

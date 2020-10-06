@@ -9,15 +9,9 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private router: Router
+    
   ) { }
 
   ngOnInit() {
   }
-
-  alternativeRouting() {
-    const randomNumber = (Math.random()*100).toFixed(0);
-    this.router.navigate(['/secret-page', randomNumber])
-  }
-
 }
