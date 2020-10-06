@@ -10,9 +10,16 @@ export class TemplateDrivenFormComponent implements OnInit {
   public user: LoginData = new LoginData();
   public coolView: boolean = true;
 
+  // Not only numbers RegExp
+  public regEx: RegExp = new RegExp(/^\d+$/)
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clear() {
+    this.user = new LoginData();
   }
 
   onSubmitTemplateBased() {

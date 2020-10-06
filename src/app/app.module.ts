@@ -13,6 +13,7 @@ import { TemplateDrivenFormComponent } from './form-examples/template-driven-for
 import { ReactiveFormComponent } from './form-examples/reactive-form/reactive-form.component';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SharedModule } from './shared/shared.module';
 
 const MAT_MODULES = [
   MatButtonModule,
@@ -39,6 +40,7 @@ const MAT_MODULES = [
     ReactiveFormsModule,
     // Necessary module for Template Driven Form!
     FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
