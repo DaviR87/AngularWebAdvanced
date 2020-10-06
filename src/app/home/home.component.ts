@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit {
   }
 
   alternativeRouting() {
-    this.router.navigate(['/secret-page'])
+    const randomNumber = (Math.random()*100).toFixed(0);
+    this.router.navigate(['/secret-page', randomNumber])
   }
 
 }

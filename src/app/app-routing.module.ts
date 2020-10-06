@@ -6,7 +6,7 @@ import { SecretPageComponent } from './secret-page/secret-page.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'secret-page', component: SecretPageComponent }
+  { path: 'secret-page/:id', component: SecretPageComponent }
 ];
 
 @NgModule({
