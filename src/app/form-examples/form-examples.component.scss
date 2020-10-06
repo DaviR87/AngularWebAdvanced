@@ -1,0 +1,21 @@
+.forms-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: calc(100vh - 160px);
+
+
+    div {
+        flex: 1;
+        padding: 10px;
+        width: 50%;
+
+        &.template-driven-form {
+            background-color: #e7c9fd;
+        }
+        &.reactive-form {
+            background-color: #ffbebe;
+        }
+
+    }
+}

@@ -1,0 +1,54 @@
+<h2>Template Driven</h2>
+
+<mat-slide-toggle [(ngModel)]="coolView">{{ coolView ? ' Cool View 😎' : 'Ugly View 🤢' }}</mat-slide-toggle>
+
+<!-- <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+    <p>
+      <label>First Name:</label>
+      <input type="text" name="firstName" [(ngModel)]="user.firstName" required>
+    </p>
+    <p>
+      <label>Password:</label>
+      <input type="password" name="password" [(ngModel)]="user.password" required>
+    </p>
+    <p>
+      <button type="submit" [disabled]="!myForm.valid">Submit</button>
+    </p>
+  </form> -->
+
+
+<form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+    <ng-container *ngIf="!coolView">
+        <p>
+            <label>First Name:</label>
+            <input type="text" name="firstName" [(ngModel)]="user.firstName" required>
+        </p>
+        <p>
+            <label>Password:</label>
+            <input type="password" name="password" [(ngModel)]="user.password" required>
+        </p>
+        <p>
+            <button type="submit" [disabled]="!myForm.valid">Submit</button>
+        </p>
+    </ng-container>
+    <ng-container *ngIf="coolView">
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput name="firstName" [(ngModel)]="user.firstName" required>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput name="password" type="password" [(ngModel)]="user.password" required>
+            </mat-form-field>
+        </p>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!myForm.valid">Submit</button>
+    </ng-container>
+</form>
+
+<hr>
+
+{{ user | json}}
+{{ myForm.valid }}
