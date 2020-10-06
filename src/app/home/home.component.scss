@@ -284,3 +284,20 @@ svg#clouds {
         visibility: hidden;
     }
 }
+
+.clock {
+    font-family: 'Oswald', sans-serif;
+    margin: 0 auto;
+  }
+  
+  .clock-time {
+    width: 100%;
+    font-size: 70px;
+    text-align: center;
+  }
+  
+  .clock-date {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+  }
