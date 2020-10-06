@@ -1,15 +1,21 @@
-<div class="content">
-  <div class="container">
-    <p class="text">
-      🎓 Angular Web Advanced 🎓
-    </p>
+<div class="top-section">
+  <div class="content">
+    <div class="container">
+      <p class="text">
+        🎓 Angular Web Advanced 🎓
+      </p>
+    </div>
   </div>
+
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">HOME</a>
+    <a href="#">Forms</a>
+    <a href="#">Routing</a>
+    <a href="#">Services</a>
+    <div class="animation start-home"></div>
+  </nav>
 </div>
 
-<nav>
-	<a href="#">Home</a>
-	<a href="#">Forms</a>
-	<a href="#">Routing</a>
-	<a href="#">Services</a>
-	<div class="animation start-home"></div>
-</nav>
+<div class="bottom-section">
+  <router-outlet></router-outlet>
+</div>

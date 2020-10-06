@@ -1,3 +1,17 @@
+.top-section {
+    height: 140px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background-color: #7598bb;;
+}
+
+.bottom-section {
+    margin-top: 160px;
+}
+
 .content {
     margin: 0 auto;
     transform: translate(0%, 0%);
