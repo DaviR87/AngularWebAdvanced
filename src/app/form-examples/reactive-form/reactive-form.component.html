@@ -1,1 +1,38 @@
 <h2>Reactive Form</h2>
+
+<mat-slide-toggle [(ngModel)]="coolView" (change)="clear()">{{ coolView ? ' Cool View 😎' : 'Ugly View 🤢' }}</mat-slide-toggle>
+
+<form [formGroup]="form" (ngSubmit)="onSubmitReactive()">
+    <ng-container *ngIf="!coolView">
+        <div class="form-field">
+            <label>First Name:</label>
+            <input type="text" formControlName="firstName">
+        </div>
+        <div class="form-field">
+            <label>Password:</label>
+            <input type="text" formControlName="password">
+        </div>
+        <p>
+            <button type="submit" [disabled]="!form.valid">Submit</button>
+        </p>
+    </ng-container>
+    <ng-container *ngIf="coolView">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </ng-container>
+</form>
+
+<hr>
+
+{{ form.getRawValue() | json}}

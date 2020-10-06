@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-driven-form.component.scss']
 })
 export class TemplateDrivenFormComponent implements OnInit {
+  public coolView: boolean = false;
 
   public user: LoginData = new LoginData();
-  public coolView: boolean = true;
 
   // Not only numbers RegExp
   public regEx: RegExp = new RegExp(/^\d+$/)

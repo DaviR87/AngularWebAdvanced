@@ -1,11 +1,12 @@
 $bg-color-dark: #34495e;
 $bg-color-light: #7598bb;
 
-
-/* You can add global styles to this file, and also import other style files */
 body {
-    // background-color: #34495e;
     background-color: $bg-color-light;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.form-field {
+    margin-bottom: 10px;
+}
