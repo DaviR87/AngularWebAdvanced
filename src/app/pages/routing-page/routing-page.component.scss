@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    mat-card {
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .super {
+        background-color: red;
+    }
+
+    .normal {
+        background-color: gainsboro;
+    }
+
+
+}

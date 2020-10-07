@@ -1,6 +1,7 @@
-<h2>Template Driven</h2>
+<h2>Template Driven Form</h2>
 
-<mat-slide-toggle [(ngModel)]="coolView" (change)="clear()">{{ coolView ? ' Cool View 😎' : 'Ugly View 🤢' }}</mat-slide-toggle>
+<mat-slide-toggle [(ngModel)]="coolView" (change)="clear()">{{ coolView ? ' Cool View 😎' : 'Ugly View 🤢' }}
+</mat-slide-toggle>
 
 <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased()">
     <ng-container *ngIf="!coolView">
@@ -30,11 +31,9 @@
                     #firstName="ngModel">
 
             </mat-form-field>
-            <div *ngIf="firstName.invalid" class="alert alert-danger">
-                <div *ngIf="firstName.errors.forbidden">
-                    Cannot be only numbers
-                </div>
-            </div>
+            <mat-error *ngIf="firstName.errors.forbidden">
+                Cannot be only numbers
+            </mat-error>
         </div>
         <div>
             <mat-form-field appearance="fill">

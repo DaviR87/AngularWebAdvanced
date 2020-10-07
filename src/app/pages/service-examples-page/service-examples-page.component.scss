@@ -1,0 +1,70 @@
+.service-page-container {
+    padding: 20px;
+
+    // .title-container {
+    //     display: flex;
+    //     justify-content: center;
+    //     font-size: 30px;
+    //     color: rgb(247, 247, 43);
+    // }
+
+    .instructions {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .instructions-label {
+            font-size: 30px;
+            margin-right: 20px;
+        }
+        .instructions-input {
+            margin-right: 20px;
+        }
+
+        
+    }
+
+    .wrapper {
+        display: flex;
+        flex-flow: wrap;
+            
+        mat-card {
+          margin: 10px;
+          min-width: 160px;
+          width: 160px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          img {
+              margin: 4px;
+          }
+
+          .pokemon-type {
+              height: 112px;
+              width: 100%;
+              background-color: aliceblue;
+
+              .pokemon-type-ov {
+                  text-align: center;
+                  height: 100%;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  cursor: pointer;
+              }
+
+              .pokemon-type-container {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  margin: auto;
+                  height: 74px;
+                  border: 3px solid #e8a457;
+                  padding: 10px;
+              }
+          }
+        }
+      }
+}

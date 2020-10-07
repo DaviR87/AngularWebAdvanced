@@ -1,0 +1,20 @@
+<div class="container">
+    <mat-card [ngClass]="{'super': superUserSatus, 'normal': !superUserSatus}">
+        Your current status: 
+        <br>
+        {{ superUserSatus ? 'SUPER USER! 🦸‍♂️' : 'Normal User 👶'}}
+    </mat-card>
+    <div class="routing-container">
+        <br><br>
+        In order to access to the secret page through the Secret Button, you have to activate the SuperUser status with
+        this switch:
+        <mat-slide-toggle [(ngModel)]="superUserSatus" (change)="switchChange($event)">
+            {{ superUserSatus ? '🦸‍♂️' : '👶' }}
+        </mat-slide-toggle>
+        <br>
+    </div>
+    <br>
+    <div>
+        <button mat-stroked-button color="primary" (click)="alternativeRouting()">Secret Button</button>
+    </div>
+</div>

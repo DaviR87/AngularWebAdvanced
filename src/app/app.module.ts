@@ -1,48 +1,59 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SecretPageComponent } from './secret-page/secret-page.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { FormExamplesComponent } from './form-examples/form-examples.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SecretPageComponent } from './pages/secret-page/secret-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TemplateDrivenFormComponent } from './form-examples/template-driven-form/template-driven-form.component';
-import { ReactiveFormComponent } from './form-examples/reactive-form/reactive-form.component';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { TemplateDrivenFormComponent } from './pages/form-examples-page/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './pages/form-examples-page/reactive-form/reactive-form.component';
 import { SharedModule } from './shared/shared.module';
-import { RoutingPageComponent } from './routing-page/routing-page.component';
+import { RoutingPageComponent } from './pages/routing-page/routing-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BackendService } from './services/backend.service';
+import { ServiceExamplesPageComponent } from './pages/service-examples-page/service-examples-page.component';
+import { FormExamplesPageComponent } from './pages/form-examples-page/form-examples-page.component';
 
-const MAT_MODULES = [
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSlideToggleModule, MatTableModule, MatCardModule, MatChipsModule, MatToolbarModule, MatDividerModule } from '@angular/material';
+
+
+const ANGULAR_MATERIAL_MODULES = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatTableModule,
+  MatCardModule,
+  MatChipsModule,
+  MatToolbarModule,
+  MatDividerModule
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomePageComponent,
     SecretPageComponent,
-    FormExamplesComponent,
+    FormExamplesPageComponent,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
-    RoutingPageComponent
+    RoutingPageComponent,
+    ServiceExamplesPageComponent
   ],
   imports: [
-    ...MAT_MODULES,
+    ...ANGULAR_MATERIAL_MODULES,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // Necessary module for Reactive Form!
+    SharedModule,
+    // Mandatory module for Reactive Form
     ReactiveFormsModule,
-    // Necessary module for Template Driven Form!
+    // Mandatory module for Template Driven Form
     FormsModule,
-    SharedModule
+    // Mandatory module for using Angular http API
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
