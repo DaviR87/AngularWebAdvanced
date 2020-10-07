@@ -9,7 +9,7 @@ import { StateService } from 'src/app/services/state.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  time: Date;
+  time: Date = new Date();
   superUserSatus: boolean;
   
   constructor(
