@@ -26,7 +26,7 @@
           <div class="click-text">CLICK ME TO REVEAL MY TYPES!</div>
         </div>
         <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection" *ngIf="pokemon.types">
-          <mat-chip *ngFor="let type of pokemon.types" selected color="accent">
+          <mat-chip *ngFor="let type of pokemon.types" selected [ngStyle]="{ backgroundColor: '#6bb8f5' }">
             {{ type }}
           </mat-chip>
         </mat-chip-list>
