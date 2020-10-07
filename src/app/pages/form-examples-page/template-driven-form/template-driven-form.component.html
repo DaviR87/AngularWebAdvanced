@@ -31,7 +31,7 @@
                     #firstName="ngModel">
 
             </mat-form-field>
-            <mat-error *ngIf="firstName.errors.forbidden">
+            <mat-error *ngIf="firstName.invalid && firstName.errors.forbidden">
                 Cannot be only numbers
             </mat-error>
         </div>

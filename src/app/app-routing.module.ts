@@ -7,7 +7,6 @@ import { SecretPageComponent } from './pages/secret-page/secret-page.component';
 import { ServiceExamplesPageComponent } from './pages/service-examples-page/service-examples-page.component';
 import { AuthGuard } from './services/auth-guard.service';
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
