@@ -14,6 +14,10 @@ const routes: Routes = [
   { path: 'routing-page', component: RoutingPageComponent },
   { path: 'secret-page/:id', component: SecretPageComponent, canActivate: [AuthGuard] },
   { path: 'service-page', component: ServiceExamplesPageComponent },
+  {
+    path: 'lazy-page',
+    loadChildren: () => import('./pages/lazy-page/lazy-page.module').then(m => m.LazyModule)
+  },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 

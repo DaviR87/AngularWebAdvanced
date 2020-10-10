@@ -13,7 +13,8 @@ export class HomePageComponent implements OnInit {
   superUserSatus: boolean;
   
   constructor(
-    private stateService: StateService
+    private stateService: StateService,
+    private router: Router
   ) {
     setInterval(() => {
       this.time = new Date(); 
@@ -29,5 +30,9 @@ export class HomePageComponent implements OnInit {
 
   switchChange(event: MatSlideToggleChange) {
     this.stateService.setSuperUserState(event.checked);
+  }
+
+  goToLazyPage() {
+    this.router.navigate(['/lazy-page'])
   }
 }
