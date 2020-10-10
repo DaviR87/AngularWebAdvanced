@@ -1,6 +1,7 @@
 <h2>Reactive Form</h2>
 
-<mat-slide-toggle [(ngModel)]="coolView" (change)="clear()">{{ coolView ? ' Cool View 😎' : 'Ugly View 🤢' }}</mat-slide-toggle>
+<mat-slide-toggle [(ngModel)]="coolView" (change)="clear()">{{ coolView ? ' Cool View 😎' : 'Ugly View 🤢' }}
+</mat-slide-toggle>
 
 <form [formGroup]="form" (ngSubmit)="onSubmitReactive()">
     <ng-container *ngIf="!coolView">
@@ -10,7 +11,32 @@
         </div>
         <div class="form-field">
             <label>Password:</label>
-            <input type="text" formControlName="password">
+            <input type="password" formControlName="password">
+        </div>
+        <div class="form-field">
+            <label>Remember me: </label>
+            <input type="checkbox" formControlName="remember">
+        </div>
+        <div class="form-field">
+            <label>Gender: </label>
+            <select formControlName="gender">
+                <option value="male">
+                    Male
+                </option>
+                <option value="female">
+                    Female
+                </option>
+            </select>
+        </div>
+        <button type="button" (click)="addStreet()">
+            Add new street
+        </button>
+        <div class="form-field">
+            <div formArrayName="streets" *ngFor="let control of form.get('streets')['controls']; index as i">
+                <label>Street: </label>
+                <input [formControl]="control" />
+                <button (click)="removeStreet(i)">remove</button>
+            </div>
         </div>
         <p>
             <button type="submit" [disabled]="!form.valid">Submit</button>

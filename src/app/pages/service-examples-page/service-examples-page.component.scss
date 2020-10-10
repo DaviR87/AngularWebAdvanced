@@ -1,5 +1,6 @@
 .service-page-container {
     padding: 20px;
+    min-height: calc(100vh - 225px);
 
     // .title-container {
     //     display: flex;
@@ -72,4 +73,16 @@
           }
         }
       }
+}
+
+.footer-container {
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+
+    div {
+        color: #34495e
+    }
 }
