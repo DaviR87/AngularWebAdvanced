@@ -9,6 +9,8 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
   public coolView: boolean = false;
   form: FormGroup;
+  dataToSubmit = null;
+  submitteDate: Date = null;
 
   constructor() {
     this.form = new FormGroup({
@@ -28,10 +30,13 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmitReactive() {
-    console.log(this.form.getRawValue());
+    this.dataToSubmit = null;
+    this.submitteDate = new Date();
+    this.dataToSubmit = this.form.getRawValue();
   }
 
   clear() {
+    (this.form.get('streets') as FormArray).clear();
     this.form.reset();
   }
 

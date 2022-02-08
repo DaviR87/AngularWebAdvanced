@@ -4,7 +4,8 @@
       <div class="instructions-input">
         <mat-form-field appearance="fill">
           <mat-label>Number of pokemon</mat-label>
-          <input matInput type="number" min="1" oninput="validity.valid||(value='');" [(ngModel)]="pokemonNumber">
+          <input matInput type="number" min="1" max="151" oninput="validity.valid||(value='');" [(ngModel)]="pokemonNumber">
+          <mat-hint>* max 151 pokemon</mat-hint>
         </mat-form-field>
       </div>
       <button mat-raised-button color="primary" [disabled]="!pokemonNumber" (click)="searchPokemon()">GET 'EM
@@ -20,7 +21,7 @@
       <div>
         <b>{{ pokemon.name | titlecase }}</b>
       </div>
-      <img width="100" height="100" [src]="'https://pokeres.bastionbot.org/images/pokemon/' + (i+1) + '.png'">
+      <img width="100" height="100" [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (i+1) + '.png'">
       <div class="pokemon-type">
         <div *ngIf="!pokemon.types" (click)="showDetails(pokemon)" class="pokemon-type-ov">
           <div class="click-text">CLICK ME TO REVEAL MY TYPES!</div>
