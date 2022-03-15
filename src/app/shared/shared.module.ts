@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule, MatChipsModule, MatDividerModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RegexValidatorDirective } from './regex-validator.directive';
 
 const COMPONENTS = [
-
 ];
+
 const DIRECTIVES = [
-    RegexValidatorDirective
+  RegexValidatorDirective
 ];
 
 const ANGULAR_MATERIAL_MODULES = [
@@ -22,19 +30,19 @@ const ANGULAR_MATERIAL_MODULES = [
 ]
 
 @NgModule({
-    imports: [
-      ...ANGULAR_MATERIAL_MODULES,
-    ],
-    declarations: [
-      ...COMPONENTS,
-      ...DIRECTIVES,
-    ],
-    exports: [
-      ...COMPONENTS,
-      ...DIRECTIVES,
-      ...ANGULAR_MATERIAL_MODULES
-    ],
-    providers: [
-    ]
-  })
-  export class SharedModule { }
+  imports: [
+    ...ANGULAR_MATERIAL_MODULES,
+  ],
+  declarations: [
+    ...COMPONENTS,
+    ...DIRECTIVES,
+  ],
+  exports: [
+    ...COMPONENTS,
+    ...DIRECTIVES,
+    ...ANGULAR_MATERIAL_MODULES
+  ],
+  providers: [
+  ]
+})
+export class SharedModule { }
