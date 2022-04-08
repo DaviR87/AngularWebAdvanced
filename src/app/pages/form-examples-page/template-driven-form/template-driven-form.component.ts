@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven-form',
@@ -22,8 +23,8 @@ export class TemplateDrivenFormComponent implements OnInit {
     this.user = new LoginData();
   }
 
-  onSubmitTemplateBased() {
-    console.log(this.user);
+  onSubmitTemplateBased(form: NgForm) {
+    console.log(form.value);
   }
 
 
