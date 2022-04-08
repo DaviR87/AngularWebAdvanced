@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -14,7 +14,7 @@ export class ReactiveFormComponent implements OnInit {
 
   constructor() {
     this.form = new FormGroup({
-      "firstName": new FormControl('Spongebob', [Validators.required]),
+      "firstName": new FormControl('Spongebob', [Validators.required, this.regexValidator(new RegExp(/^\d+$/))]),
       "password": new FormControl('', [Validators.required]),
       "remember": new FormControl('true'),
       "gender": new FormControl(''),
@@ -49,5 +49,13 @@ export class ReactiveFormComponent implements OnInit {
     const streetsArray = this.form.get('streets') as FormArray;
     streetsArray.removeAt(i);
   }
+
+  regexValidator(regex: RegExp): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} => {
+      const forbidden = regex.test(control.value);
+      return forbidden ? {'forbidden': {value: control.value}} : null;
+    };
+  }
+  
 
 }

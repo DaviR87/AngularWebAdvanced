@@ -3,7 +3,7 @@
 <mat-slide-toggle [(ngModel)]="coolView" (change)="clear()">{{ coolView ? ' Cool View 😎' : 'Ugly View 🤢' }}
 </mat-slide-toggle>
 
-<form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+<form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm)">
     <ng-container *ngIf="!coolView">
         <div class="form-field">
             <label>First Name:</label>
