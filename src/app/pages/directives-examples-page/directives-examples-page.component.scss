@@ -1,0 +1,26 @@
+.directives-page-container {
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    .monkey-container {
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .monkey-face {
+            font-size: 30px;
+        }
+    }
+
+    .odd {
+        background: rgb(255, 166, 0);
+        background: linear-gradient(90deg, rgba(255, 166, 0, 1) 0%, rgba(121, 9, 9, 0) 50%, rgba(0, 212, 255, 0) 100%);
+    }
+
+    .even {
+        background: rgb(255, 0, 69);
+        background: linear-gradient(90deg, rgba(255, 0, 69, 1) 0%, rgba(255, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 100%);
+    }
+}

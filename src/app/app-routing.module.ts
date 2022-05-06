@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DirectivesExamplesPageComponent } from './pages/directives-examples-page/directives-examples-page.component';
 import { FormExamplesPageComponent } from './pages/form-examples-page/form-examples-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RoutingPageComponent } from './pages/routing-page/routing-page.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'routing-page', component: RoutingPageComponent },
   { path: 'secret-page/:id', component: SecretPageComponent, canActivate: [AuthGuard] },
   { path: 'service-page', component: ServiceExamplesPageComponent },
+  { path: 'directive-page', component: DirectivesExamplesPageComponent },
   {
     path: 'lazy-page',
     loadChildren: () => import('./pages/lazy-page/lazy-page.module').then(m => m.LazyModule)

@@ -13,6 +13,7 @@ import { RoutingPageComponent } from './pages/routing-page/routing-page.componen
 import { SecretPageComponent } from './pages/secret-page/secret-page.component';
 import { ServiceExamplesPageComponent } from './pages/service-examples-page/service-examples-page.component';
 import { SharedModule } from './shared/shared.module';
+import { DirectivesExamplesPageComponent } from './pages/directives-examples-page/directives-examples-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SharedModule } from './shared/shared.module';
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
     RoutingPageComponent,
-    ServiceExamplesPageComponent
+    ServiceExamplesPageComponent,
+    DirectivesExamplesPageComponent
   ],
   imports: [
     BrowserModule,

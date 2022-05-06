@@ -8,13 +8,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HighlightDirective } from './highlight.directive';
 import { RegexValidatorDirective } from './regex-validator.directive';
 
 const COMPONENTS = [
 ];
 
 const DIRECTIVES = [
-  RegexValidatorDirective
+  RegexValidatorDirective,
+  HighlightDirective
 ];
 
 const ANGULAR_MATERIAL_MODULES = [

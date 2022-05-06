@@ -1,0 +1,34 @@
+<div class="directives-page-container">
+    <h1>*ngIf Example</h1>
+    <div class="monkey-container">
+        <label>Show: </label>
+        <input type="checkbox" [(ngModel)]="show">
+        <div class="monkey-face">
+            <div *ngIf="show">
+                🙉
+            </div>
+            <div *ngIf="!show">
+                🙈
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1>*ngFor Example with ngClass</h1>
+    <ul>
+        <li *ngFor="let fruit of macedonia;let odd = odd" [ngClass]="odd ? 'odd' : 'even'">
+            <span>{{ fruit.name }} - {{ fruit.icon }}</span>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h1>Custom Directive</h1>
+    <div appHighlight [hlColor]="'red'">
+        Hello! Hover on me to change my color!<br>
+        By default i'm red.<br>
+        On mousein i became violet.<br>
+        On mouseout i became green.<br>
+    </div>
+</div>
