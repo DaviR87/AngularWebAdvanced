@@ -23,4 +23,20 @@
         background: rgb(255, 0, 69);
         background: linear-gradient(90deg, rgba(255, 0, 69, 1) 0%, rgba(255, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 100%);
     }
+
+    .custom-directive-box {
+
+        div:first-child {
+            padding: 10px;
+            min-width: 300px;
+        }
+        div:last-child {
+            padding: 10px;
+        }
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        // min-width: 560px;
+        // justify-content: space-evenly;
+    }
 }

@@ -23,6 +23,8 @@ export class DirectivesExamplesPageComponent {
     name: 'Kiwi',
     icon: '🥝'
   }];
+  customColorList: string[] = ['red', 'yellow', 'blue', 'pink'];
+  customColor: string = 'red';
 }
 
 export interface Fruit {

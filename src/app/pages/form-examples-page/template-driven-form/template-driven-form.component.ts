@@ -32,11 +32,11 @@ export class TemplateDrivenFormComponent implements OnInit {
 }
 
 export class LoginData {
-  firstName: string;
+  username: string;
   password: string;
 
   constructor() {
-    this.firstName = '';
+    this.username = '';
     this.password = '';
   }
 

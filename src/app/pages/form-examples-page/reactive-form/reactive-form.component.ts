@@ -14,7 +14,7 @@ export class ReactiveFormComponent implements OnInit {
 
   constructor() {
     this.form = new FormGroup({
-      "firstName": new FormControl('Spongebob', [Validators.required, this.regexValidator(new RegExp(/^\d+$/))]),
+      "username": new FormControl('MarioRossi', [Validators.required, this.regexValidator(new RegExp(/^\d+$/))]),
       "password": new FormControl('', [Validators.required]),
       "remember": new FormControl('true'),
       "gender": new FormControl(''),
@@ -23,7 +23,7 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.form.controls['firstName'].value);
+    console.log(this.form.controls['username'].value);
     this.form.controls['gender'].valueChanges.subscribe(val => {
       console.log('Gender changed! Now you are a ' + val)
     });

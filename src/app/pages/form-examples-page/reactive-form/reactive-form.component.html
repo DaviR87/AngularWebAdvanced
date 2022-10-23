@@ -6,8 +6,8 @@
 <form [formGroup]="form" (ngSubmit)="onSubmitReactive()">
     <ng-container *ngIf="!coolView">
         <div class="form-field">
-            <label>First Name:</label>
-            <input type="text" formControlName="firstName">
+            <label>Username:</label>
+            <input type="text" formControlName="username">
         </div>
         <div class="form-field">
             <label>Password:</label>
@@ -45,8 +45,8 @@
     <ng-container *ngIf="coolView">
         <div>
             <mat-form-field appearance="fill">
-                <mat-label>First Name</mat-label>
-                <input matInput formControlName="firstName">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username">
             </mat-form-field>
         </div>
         <div>

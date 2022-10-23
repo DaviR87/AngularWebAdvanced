@@ -6,11 +6,11 @@
 <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm)">
     <ng-container *ngIf="!coolView">
         <div class="form-field">
-            <label>First Name:</label>
-            <input type="text" name="firstName" [regexValidator]="regEx" [(ngModel)]="user.firstName" required
-                #firstName="ngModel">
-            <div *ngIf="firstName.invalid" class="alert alert-danger">
-                <div *ngIf="firstName.errors.forbidden">
+            <label>Username:</label>
+            <input type="text" name="username" [regexValidator]="regEx" [(ngModel)]="user.username" required
+                #username="ngModel">
+            <div *ngIf="username.invalid" class="alert alert-danger">
+                <div *ngIf="username.errors.forbidden">
                     Cannot be only numbers
                 </div>
             </div>
@@ -26,12 +26,12 @@
     <ng-container *ngIf="coolView">
         <div>
             <mat-form-field appearance="fill">
-                <mat-label>First Name</mat-label>
-                <input matInput name="firstName" [regexValidator]="regEx" [(ngModel)]="user.firstName" required
-                    #firstName="ngModel">
+                <mat-label>Username</mat-label>
+                <input matInput name="username" [regexValidator]="regEx" [(ngModel)]="user.username" required
+                    #username="ngModel">
 
             </mat-form-field>
-            <mat-error *ngIf="firstName.invalid && firstName.errors.forbidden">
+            <mat-error *ngIf="username.invalid && username.errors.forbidden">
                 Cannot be only numbers
             </mat-error>
         </div>

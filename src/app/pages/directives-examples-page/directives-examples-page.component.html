@@ -25,10 +25,28 @@
     <hr>
 
     <h1>Custom Directive</h1>
-    <div appHighlight [hlColor]="'red'">
-        Hello! Hover on me to change my color!<br>
-        By default i'm red.<br>
-        On mousein i became violet.<br>
-        On mouseout i became green.<br>
+    <div class="custom-directive-box">
+        <div appHighlight [hlColor]="customColor">
+            Hello! Hover on me to change my color!<br>
+            By default i'm red.<br>
+            On mousein i became violet.<br>
+            On mouseout i became green.<br>
+            <br>
+            You can also choose a custom color<br>
+            with <br>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Color </mat-label>
+                <mat-select [(ngModel)]="customColor">
+                    <mat-option *ngFor="let color of customColorList" [value]="color">{{ color }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Custom color </mat-label>
+                <input matInput type="color" [(ngModel)]="customColor">
+            </mat-form-field>
+            <div>User color: {{ customColor }}</div>
+        </div>
     </div>
 </div>

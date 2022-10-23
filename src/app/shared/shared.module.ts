@@ -5,6 +5,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -28,7 +29,8 @@ const ANGULAR_MATERIAL_MODULES = [
   MatCardModule,
   MatChipsModule,
   MatToolbarModule,
-  MatDividerModule
+  MatDividerModule,
+  MatSelectModule
 ]
 
 @NgModule({
