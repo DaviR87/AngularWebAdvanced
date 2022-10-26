@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { LazyChildOfLazyChildComponent } from './lazy-child-of-lazy-child/lazy-child-of-lazy-child.component';
+import { ChildOfLazyChildComponent } from './child-of-lazy-child/child-of-lazy-child.component';
 import { LazyChildComponent } from './lazy-child.component';
 
 const ROUTES: Routes = [
@@ -10,8 +10,8 @@ const ROUTES: Routes = [
     component: LazyChildComponent,
     children: [
       {
-        path: 'lazy-child-of-lazy-child',
-        component: LazyChildOfLazyChildComponent
+        path: 'child-of-lazy-child',
+        component: ChildOfLazyChildComponent
       },
       {
         path: '**',
@@ -23,7 +23,7 @@ const ROUTES: Routes = [
 
 const COMPONENTS = [
   LazyChildComponent,
-  LazyChildOfLazyChildComponent
+  ChildOfLazyChildComponent
 ];
 
 const DIRECTIVES = [

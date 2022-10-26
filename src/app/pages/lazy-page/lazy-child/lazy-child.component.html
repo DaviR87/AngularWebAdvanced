@@ -1,5 +1,15 @@
 <div class="container">
-    <p>lazy-child works!</p>
-    <button mat-raised-button color="primary" routerLink="./lazy-child-of-lazy-child">Lazy of Lazy</button>
+    <h1>My name is LazyChild</h1>
+    <h2>I'm a lazy loaded component</h2>
+    <div class="structure">
+        <ul>
+          <li><div>lazy-page.component</div>
+          <ul>
+            <li><div><strong>lazy-child.component</strong> (You are here)</div></li>
+          </ul>
+          </li>
+        </ul>
+      </div>
+    <button mat-raised-button color="primary" routerLink="./child-of-lazy-child">Child of LazyChild</button>
     <router-outlet></router-outlet>
 </div>
