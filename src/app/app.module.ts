@@ -14,6 +14,7 @@ import { SecretPageComponent } from './pages/secret-page/secret-page.component';
 import { ServiceExamplesPageComponent } from './pages/service-examples-page/service-examples-page.component';
 import { SharedModule } from './shared/shared.module';
 import { DirectivesExamplesPageComponent } from './pages/directives-examples-page/directives-examples-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DirectivesExamplesPageComponent } from './pages/directives-examples-pag
     ReactiveFormComponent,
     RoutingPageComponent,
     ServiceExamplesPageComponent,
-    DirectivesExamplesPageComponent
+    DirectivesExamplesPageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
