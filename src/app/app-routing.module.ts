@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'form-examples', component: FormExamplesPageComponent },
   { path: 'routing-page', component: RoutingPageComponent },
-  { path: 'secret-page/:id', component: SecretPageComponent, canActivate: [AuthGuard] },
+  { path: 'secret-page/:id', component: SecretPageComponent, canActivate: [AuthGuard], canDeactivate: [AuthGuard] },
   { path: 'service-page', component: ServiceExamplesPageComponent },
   { path: 'directive-page', component: DirectivesExamplesPageComponent },
   {

@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SecretPageComponent implements OnInit {
   public num: number;
+  canGo = false;
 
   constructor(
     private activatedRoute: ActivatedRoute
@@ -21,4 +22,12 @@ export class SecretPageComponent implements OnInit {
       })
   }
 
+  canDeactivate() {
+    if (this.canGo) {
+      return true
+    } else {
+      alert('Check the checkbox in order to change the page!');
+      return false;
+    }
+  }
 }
