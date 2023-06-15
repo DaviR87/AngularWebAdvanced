@@ -8,7 +8,7 @@
         <div class="form-field">
             <label>Username:</label>
             <input type="text" name="username" [regexValidator]="regEx" [(ngModel)]="user.username" required
-                #username="ngModel">
+                #username="ngModel" autocomplete="off">
             <div *ngIf="username.invalid" class="alert alert-danger">
                 <div *ngIf="username.errors.forbidden">
                     Cannot be only numbers
@@ -17,7 +17,7 @@
         </div>
         <div class="form-field">
             <label>Password:</label>
-            <input type="password" name="password" [(ngModel)]="user.password" required>
+            <input type="password" name="password" [(ngModel)]="user.password" required autocomplete="off">
         </div>
         <p>
             <button type="submit" [disabled]="!myForm.valid">Submit</button>
@@ -28,7 +28,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Username</mat-label>
                 <input matInput name="username" [regexValidator]="regEx" [(ngModel)]="user.username" required
-                    #username="ngModel">
+                    #username="ngModel" autocomplete="off">
 
             </mat-form-field>
             <mat-error *ngIf="username.invalid && username.errors.forbidden">
@@ -38,7 +38,7 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Password</mat-label>
-                <input matInput name="password" type="password" [(ngModel)]="user.password" required>
+                <input matInput name="password" type="password" [(ngModel)]="user.password" required autocomplete="off">
             </mat-form-field>
         </div>
         <button mat-raised-button color="primary" type="submit" [disabled]="!myForm.valid">Submit</button>
