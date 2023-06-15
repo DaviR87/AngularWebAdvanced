@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-card [ngClass]="{'super': superUserSatus, 'normal': !superUserSatus}">
+    <mat-card appearance="outlined" [ngClass]="{'super': superUserSatus, 'normal': !superUserSatus}">
         Your current status: 
         <br>
         {{ superUserSatus ? 'SUPER USER! 🦸‍♂️' : 'Normal User 👶'}}

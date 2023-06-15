@@ -29,7 +29,6 @@
     .wrapper {
         display: flex;
         flex-flow: wrap;
-            
         mat-card {
           margin: 10px;
           min-width: 160px;
@@ -66,7 +65,6 @@
                   border: 3px solid #e8a457;
                   padding: 10px;
               }
-
               mat-chip {
                 max-width: 160px;
               }

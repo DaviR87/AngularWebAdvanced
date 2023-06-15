@@ -1,5 +1,5 @@
 <div class="service-page-container">
-  <mat-card>
+  <mat-card appearance="outlined">
     <div class="instructions">
       <div class="instructions-input">
         <mat-form-field appearance="fill">
@@ -14,7 +14,7 @@
   </mat-card>
 
   <div class="wrapper">
-    <mat-card *ngFor="let pokemon of pokemonList; let i = index" [@flip]="flip">
+    <mat-card appearance="outlined" *ngFor="let pokemon of pokemonList; let i = index" [@flip]="flip">
       <div>
         # {{ (i+1) }}
       </div>
@@ -26,11 +26,11 @@
         <div *ngIf="!pokemon.types" (click)="showDetails(pokemon)" class="pokemon-type-ov">
           <div class="click-text">CLICK ME TO REVEAL MY TYPES!</div>
         </div>
-        <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection" *ngIf="pokemon.types">
-          <mat-chip *ngFor="let type of pokemon.types" selected [ngStyle]="{ backgroundColor: '#6bb8f5' }">
+        <mat-chip-listbox class="mat-chip-list-stacked" aria-label="Color selection" *ngIf="pokemon.types">
+          <mat-chip-option *ngFor="let type of pokemon.types" selected [ngStyle]="{ backgroundColor: '#6bb8f5' }">
             {{ type }}
-          </mat-chip>
-        </mat-chip-list>
+          </mat-chip-option>
+        </mat-chip-listbox>
       </div>
     </mat-card>
   </div>
