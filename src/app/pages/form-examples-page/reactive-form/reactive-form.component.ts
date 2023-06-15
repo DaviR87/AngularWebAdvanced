@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormControl, FormGroup, UntypedFormArray, UntypedFormControl, UntypedFormGroup, ValidatorFn, Validators } from '@angular/forms';
+
+export interface UserForm {
+  username: FormControl<string>,
+  password: FormControl<string>,
+  remember: FormControl<boolean>,
+  gender: FormControl<string>,
+  streets: FormArray<FormControl<string>>
+}
 
 @Component({
   selector: 'app-reactive-form',
@@ -8,23 +16,23 @@ import { AbstractControl, FormArray, FormControl, FormGroup, ValidatorFn, Valida
 })
 export class ReactiveFormComponent implements OnInit {
   public coolView: boolean = false;
-  form: FormGroup;
+  form: FormGroup<UserForm>;
   dataToSubmit = null;
   submitteDate: Date = null;
 
   constructor() {
-    this.form = new FormGroup({
-      "username": new FormControl('MarioRossi', [Validators.required, this.regexValidator(new RegExp(/^\d+$/))]),
-      "password": new FormControl('', [Validators.required]),
-      "remember": new FormControl('true'),
-      "gender": new FormControl(''),
+    this.form = new FormGroup<UserForm>({
+      "username": new FormControl<string>('MarioRossi', [Validators.required, this.regexValidator(new RegExp(/^\d+$/))]),
+      "password": new FormControl<string>('', [Validators.required]),
+      "remember": new FormControl<boolean>(true),
+      "gender": new FormControl<string>(''),
       "streets": new FormArray([])
     });
   }
 
   ngOnInit() {
-    console.log(this.form.controls['username'].value);
-    this.form.controls['gender'].valueChanges.subscribe(val => {
+    console.log(this.form.controls.username.value);
+    this.form.controls.gender.valueChanges.subscribe(val => {
       console.log('Gender changed! Now you are a ' + val)
     });
   }
@@ -36,17 +44,17 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   clear() {
-    (this.form.get('streets') as FormArray).clear();
+    this.form.controls.streets.clear();
     this.form.reset();
   }
 
   addStreet() {
-    const streetsArray = this.form.get('streets') as FormArray;
-    streetsArray.push(new FormControl('', Validators.required));
+    const streetsArray = this.form.controls.streets;
+    streetsArray.push(new FormControl<string>('', Validators.required));
   }
 
   removeStreet(i: number) {
-    const streetsArray = this.form.get('streets') as FormArray;
+    const streetsArray = this.form.controls.streets;
     streetsArray.removeAt(i);
   }
 
