@@ -7,13 +7,20 @@ import { RoutingPageComponent } from './pages/routing-page/routing-page.componen
 import { SecretPageComponent } from './pages/secret-page/secret-page.component';
 import { ServiceExamplesPageComponent } from './pages/service-examples-page/service-examples-page.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { canActivateGuard } from './auth-new.guard';
+import { canDeactivateGuard } from './deactivate.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'form-examples', component: FormExamplesPageComponent },
   { path: 'routing-page', component: RoutingPageComponent },
-  { path: 'secret-page/:id', component: SecretPageComponent, canActivate: [AuthGuard], canDeactivate: [AuthGuard] },
+  { 
+    path: 'secret-page/:id',
+    component: SecretPageComponent,
+    canActivate: [canActivateGuard],
+    canDeactivate: [canDeactivateGuard],
+  },
   { path: 'service-page', component: ServiceExamplesPageComponent },
   { path: 'directive-page', component: DirectivesExamplesPageComponent },
   {
