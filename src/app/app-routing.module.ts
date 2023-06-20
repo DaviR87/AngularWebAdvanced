@@ -6,7 +6,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RoutingPageComponent } from './pages/routing-page/routing-page.component';
 import { SecretPageComponent } from './pages/secret-page/secret-page.component';
 import { ServiceExamplesPageComponent } from './pages/service-examples-page/service-examples-page.component';
-import { AuthGuard } from './services/auth-guard.service';
 import { canActivateGuard } from './auth-new.guard';
 import { canDeactivateGuard } from './deactivate.guard';
 
@@ -33,6 +32,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: []
 })
 export class AppRoutingModule { }
